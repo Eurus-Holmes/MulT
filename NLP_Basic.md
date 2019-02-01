@@ -147,7 +147,7 @@ Index
 - **指数部分**也可以是**交叉熵**的形式，此时困惑度相当于交叉熵的指数形式
     <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;2^{H(\tilde{p},q)}&space;=&space;2^{-\sum_x\tilde{p}(x)\log_{2}q(x)}"><img src="/_assets/公式_20180728202629.png" /></a></div>
 
-    > 其中 $p^{\~}$ 为**测试集**中的经验分布——$p^\~(x) = n/N$，其中 `n` 为 x 的出现次数，N 为测试集的大小
+    > 其中 `p~` 为**测试集**中的经验分布——`p~(x) = n/N`，其中 `n` 为 x 的出现次数，N 为测试集的大小
 
 **语言模型中的 PPX**
 - 在 **NLP** 中，困惑度常作为**语言模型**的评价指标
