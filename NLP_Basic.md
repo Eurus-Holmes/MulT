@@ -65,7 +65,7 @@ Index
                 预测
                     评价
         ```
-        <div align="center"><img src="../_assets/TIM截图20180807203305.png" height="200" /></div>
+        <div align="center"><img src="/_assets/TIM截图20180807203305.png" height="200" /></div>
         
         - 最重要的部分：数据收集、预处理、特征工程
     - 示例
