@@ -119,10 +119,10 @@ Index
 
 ## Seq2Seq 模型
 - 大部分自然语言问题都可以使用 Seq2Seq 模型解决
-    <div align="center"><img src="../_assets/TIM截图20180807210029.png" height="200" /></div>
+    <div align="center"><img src="/_assets/TIM截图20180807210029.png" height="200" /></div>
 
 - **“万物”皆 Seq2Seq**
-    <div align="center"><img src="../_assets/TIM截图20180807210133.png" height="300" /></div>
+    <div align="center"><img src="/_assets/TIM截图20180807210133.png" height="300" /></div>
 
 
 ## 评价机制
@@ -135,23 +135,23 @@ Index
 <h3>基本公式</h3>
 
 - **概率分布**（离散）的困惑度
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;{\displaystyle&space;2^{H(p)}=2^{-\sum&space;_{x}p(x)\log&space;_{2}p(x)}}"><img src="../_assets/公式_20180728195601.png" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;{\displaystyle&space;2^{H(p)}=2^{-\sum&space;_{x}p(x)\log&space;_{2}p(x)}}"><img src="/_assets/公式_20180728195601.png" /></a></div>
     
     > 其中 `H(p)` 即**信息熵**
 
 - **概率模型**的困惑度
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;{\displaystyle&space;b^{-{\frac&space;{1}{N}}\sum&space;_{i=1}^{N}\log&space;_{b}q(x_{i})}}"><img src="../_assets/公式_20180728201614.png" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;{\displaystyle&space;b^{-{\frac&space;{1}{N}}\sum&space;_{i=1}^{N}\log&space;_{b}q(x_{i})}}"><img src="/_assets/公式_20180728201614.png" /></a></div>
 
     > 通常 `b=2`
   
 - **指数部分**也可以是**交叉熵**的形式，此时困惑度相当于交叉熵的指数形式
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;2^{H(\tilde{p},q)}&space;=&space;2^{-\sum_x\tilde{p}(x)\log_{2}q(x)}"><img src="../_assets/公式_20180728202629.png" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;2^{H(\tilde{p},q)}&space;=&space;2^{-\sum_x\tilde{p}(x)\log_{2}q(x)}"><img src="/_assets/公式_20180728202629.png" /></a></div>
 
     > 其中 `p~` 为**测试集**中的经验分布——`p~(x) = n/N`，其中 `n` 为 x 的出现次数，N 为测试集的大小
 
 **语言模型中的 PPX**
 - 在 **NLP** 中，困惑度常作为**语言模型**的评价指标
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\begin{aligned}&space;\mathrm{PPX}(W_{test})&space;&=2^{-\sum_{i=1}^{|V|}\tilde{p}(w_i)\log_{2}q(w_i)}\\&space;&=2^{-\sum_{i=1}^{|V|}\frac{\mathrm{cnt}(w_i)}{N}\log_{2}q(w_i)}&space;\end{aligned}"><img src="../_assets/公式_20180728205525.png" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\begin{aligned}&space;\mathrm{PPX}(W_{test})&space;&=2^{-\sum_{i=1}^{|V|}\tilde{p}(w_i)\log_{2}q(w_i)}\\&space;&=2^{-\sum_{i=1}^{|V|}\frac{\mathrm{cnt}(w_i)}{N}\log_{2}q(w_i)}&space;\end{aligned}"><img src="/_assets/公式_20180728205525.png" /></a></div>
 
 - 直观来说，就是下一个**候选词数目**的期望值——
 
@@ -161,17 +161,17 @@ Index
 > [一种机器翻译的评价准则——BLEU](https://blog.csdn.net/qq_21190081/article/details/53115580) - CSDN博客 
 - 机器翻译评价准则
 - 计算公式
-    <div align="center"><img src="../_assets/TIM截图20180728212554.png" height="" /></div>
+    <div align="center"><img src="/_assets/TIM截图20180728212554.png" height="" /></div>
 
   其中
-    <div style="position:relative;left:25%"><img src="../_assets/TIM截图20180728215749.png" height="" /></div>
-    <div style="position:relative;left:25%"><img src="../_assets/TIM截图20180728212444.png" height="" /></div>
-    <!-- <div style="position:relative;left:25%"><img src="../_assets/TIM截图20180728212444.png" height="" /></div> -->
+    <div style="position:relative;left:25%"><img src="/_assets/TIM截图20180728215749.png" height="" /></div>
+    <div style="position:relative;left:25%"><img src="/_assets/TIM截图20180728212444.png" height="" /></div>
+    <!-- <div style="position:relative;left:25%"><img src="/_assets/TIM截图20180728212444.png" height="" /></div> -->
 
     > `c` 为生成句子的长度；`r` 为参考句子的长度——目的是**惩罚**长度过短的候选句子
 
 - 为了计算方便，会加一层 `log` 
-    <div align="center"><img src="../_assets/TIM截图20180728213300.png" height="" /></div>
+    <div align="center"><img src="/_assets/TIM截图20180728213300.png" height="" /></div>
     
     > 通常 `N=4, w_n=1/4`
 
@@ -201,10 +201,10 @@ Index
     Score("什么 有 语言 模型") --> 0.01   # 不太常见的说法，得分比较低
     ```
 - 以上过程可以形式化为：
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(W)=p(w_1^T)=p(w_1,w_2,...,w_T"><img src="../_assets/公式_20180805204149.png" height="" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(W)=p(w_1^T)=p(w_1,w_2,...,w_T"><img src="/_assets/公式_20180805204149.png" height="" /></a></div>
 
   根据贝叶斯公式，有
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w_1^T)=p(w_1)\cdot&space;p(w_2|w_1)\cdot&space;p(w_3|w_1^2)\cdots&space;p(w_T|w_1^{T-1})"><img src="../_assets/公式_20180805211530.png" height="" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w_1^T)=p(w_1)\cdot&space;p(w_2|w_1)\cdot&space;p(w_3|w_1^2)\cdots&space;p(w_T|w_1^{T-1})"><img src="/_assets/公式_20180805211530.png" height="" /></a></div>
 
 - 其中每个条件概率就是**模型的参数**；如果这个参数都是已知的，那么就能得到整个序列的概率了
 
@@ -220,16 +220,16 @@ Index
 ## N-gram 语言模型
 - 马尔可夫(Markov)假设——未来的事件，只取决于有限的历史
 - 基于马尔可夫假设，N-gram 语言模型认为一个词出现的概率只与它前面的 n-1 个词相关
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w_k|w_1,..,w_{k-1})\approx&space;p(w_k|w_{k-n&plus;1},..,w_{k-1})"><img src="../_assets/公式_20180805211644.png" height="" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w_k|w_1,..,w_{k-1})\approx&space;p(w_k|w_{k-n&plus;1},..,w_{k-1})"><img src="/_assets/公式_20180805211644.png" height="" /></a></div>
   
 - 根据**条件概率公式**与**大数定律**，当语料的规模足够大时，有
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w_k|w_{k-n&plus;1}^{k-1})=\frac{p(w_{k-n&plus;1}^k)}{p(w_{k-n&plus;1}^{k-1})}\approx&space;\frac{\mathrm{count}(w_{k-n&plus;1}^k)}{\mathrm{count}(w_{k-n&plus;1}^{k-1})}"><img src="../_assets/公式_20180805211936.png" height="" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w_k|w_{k-n&plus;1}^{k-1})=\frac{p(w_{k-n&plus;1}^k)}{p(w_{k-n&plus;1}^{k-1})}\approx&space;\frac{\mathrm{count}(w_{k-n&plus;1}^k)}{\mathrm{count}(w_{k-n&plus;1}^{k-1})}"><img src="/_assets/公式_20180805211936.png" height="" /></a></div>
 
 - 以 `n=2` 即 bi-gram 为例，有
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w_k|w_{k-1})=\frac{p(w_{k-1},w_k)}{p(w_{k-1})}\approx&space;\frac{\mathrm{count}(w_{k-1},w_k)}{\mathrm{count}(w_{k-1})}"><img src="../_assets/公式_20180805212222.png" height="" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w_k|w_{k-1})=\frac{p(w_{k-1},w_k)}{p(w_{k-1})}\approx&space;\frac{\mathrm{count}(w_{k-1},w_k)}{\mathrm{count}(w_{k-1})}"><img src="/_assets/公式_20180805212222.png" height="" /></a></div>
 
 - 假设词表的规模 `N=200000`（汉语的词汇量），模型参数与 `n· 的关系表
-    <div align="center"><img src="../_assets/TIM截图20180805212441.png" height="" /></div>
+    <div align="center"><img src="/_assets/TIM截图20180805212441.png" height="" /></div>
 
 ### 可靠性与可区别性
 - 假设没有计算和存储限制，`n` 是不是越大越好？
@@ -262,7 +262,7 @@ Index
 ## 神经概率语言模型 (NPLM)
 > [专题-词向量](./B-专题-词向量)
 - 神经概率语言模型依然是一个概率语言模型，它通过**神经网络**来计算概率语言模型中每个参数
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w|{\color{Red}\text{context}(w)})=g(i_w,{\color{Red}V_{context}})"><img src="../_assets/公式_20180806100950.png" height="" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w|{\color{Red}\text{context}(w)})=g(i_w,{\color{Red}V_{context}})"><img src="/_assets/公式_20180806100950.png" height="" /></a></div>
   
     - 其中 `g` 表示神经网络，`i_w` 为 `w` 在词表中的序号，`context(w)` 为 `w` 的上下文，`V_context` 为上下文构成的特征向量。
     - `V_context` 由上下文的**词向量**进一步组合而成
@@ -270,7 +270,7 @@ Index
 ### N-gram 神经语言模型
 > [A Neural Probabilistic Language Model](http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) (Bengio, et al., 2003)
 - 这是一个经典的神经概率语言模型，它沿用了 N-gram 模型中的思路，将 `w` 的前 `n-1` 个词作为 `w` 的上下文 `context(w)`，而 `V_context` 由这 `n-1` 个词的词向量拼接而成，即
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w_k|{\color{Red}w_{k-n&plus;1}^{k-1}})=g(i_{w_k},{\color{Red}[c(w_{k-n&plus;1});...;c(w_{k-1})]})"><img src="../_assets/公式_20180806102047.png" height="" /></a></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=p(w_k|{\color{Red}w_{k-n&plus;1}^{k-1}})=g(i_{w_k},{\color{Red}[c(w_{k-n&plus;1});...;c(w_{k-1})]})"><img src="/_assets/公式_20180806102047.png" height="" /></a></div>
 
     - 其中 `c(w)` 表示 `w` 的词向量
     - 不同的神经语言模型中 `context(w)` 可能不同，比如 Word2Vec 中的 CBOW 模型
@@ -286,12 +286,12 @@ Index
 - 训练时，使用**交叉熵**作为损失函数
 - **当训练完成时**，就得到了 N-gram 神经语言模型，以及副产品**词向量**
 - 整个模型可以概括为如下公式：
-    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=y=U\cdot\tanh(Wx&plus;p)&plus;q"><img src="../_assets/公式_2018080695721.png" height="" /></a></div><br/>
-    <div align="center"><img src="../_assets/TIM截图20180805234123.png" height="200" /></div>
+    <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=y=U\cdot\tanh(Wx&plus;p)&plus;q"><img src="/_assets/公式_2018080695721.png" height="" /></a></div><br/>
+    <div align="center"><img src="/_assets/TIM截图20180805234123.png" height="200" /></div>
   
     > 原文的模型还考虑了投影层与输出层有有边相连的情形，因而会多一个权重矩阵，但本质上是一致的：
-    >> <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=y=U\cdot\tanh(W_1x&plus;p)&plus;W_2x&plus;q"><img src="../_assets/公式_2018080695819.png" height="" /></a></div><br/>
-    >> <div align="center"><img src="../_assets/TIM截图20180805231056.png" height="" /></div>
+    >> <div align="center"><a href="http://www.codecogs.com/eqnedit.php?latex=y=U\cdot\tanh(W_1x&plus;p)&plus;W_2x&plus;q"><img src="/_assets/公式_2018080695819.png" height="" /></a></div><br/>
+    >> <div align="center"><img src="/_assets/TIM截图20180805231056.png" height="" /></div>
 
 ### 模型参数的规模与运算量
 - 模型的超参数：`m, n, h, N`
