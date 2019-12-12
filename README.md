@@ -7,21 +7,6 @@
 > Original author's implementation is [here](https://github.com/yaohungt/Multimodal-Transformer).
 
 
-
-Please cite our paper if you find our work useful for your research:
-
-```tex
-@inproceedings{tsai2019MULT,
-  title={Multimodal Transformer for Unaligned Multimodal Language Sequences},
-  author={Tsai, Yao-Hung Hubert and Bai, Shaojie and Liang, Paul Pu and Kolter, J. Zico and Morency, Louis-Philippe and Salakhutdinov, Ruslan},
-  booktitle={Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
-  month = {7},
-  year={2019},
-  address = {Florence, Italy},
-  publisher = {Association for Computational Linguistics},
-}
-```
-
 ## Overview
 
 ### Overall Architecture for Multimodal Transformer
@@ -88,3 +73,13 @@ export WARP_CTC_PATH=/home/xxx/warp-ctc/build
 Some portion of the code were adapted from the [fairseq](https://github.com/pytorch/fairseq) repo.
 
 
+## Citation
+
+```tex
+@inproceedings{tsai2019multimodal,
+  title={Multimodal Transformer for Unaligned Multimodal Language Sequences},
+  author={Tsai, Yao-Hung Hubert and Bai, Shaojie and Liang, Paul Pu and Kolter, J Zico and Morency, Louis-Philippe and Salakhutdinov, Ruslan},
+  booktitle={Proceedings of the Annual Meeting of the Association for Computational Linguistics (ACL)},
+  year={2019}
+}
+```
