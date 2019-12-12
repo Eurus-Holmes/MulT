@@ -9,20 +9,18 @@
   
 ## Datasets
 
-Data files (containing processed MOSI, MOSEI and IEMOCAP datasets) can be downloaded from [here](https://www.dropbox.com/sh/hyzpgx1hp9nj37s/AAB7FhBqJOFDw2hEyvv2ZXHxa?dl=0).
+ - Data files (containing processed MOSI, MOSEI and IEMOCAP datasets) can be downloaded from [here](https://www.dropbox.com/sh/hyzpgx1hp9nj37s/AAB7FhBqJOFDw2hEyvv2ZXHxa?dl=0).
 
-To retrieve the meta information and the raw data, please refer to the [SDK for these datasets](https://github.com/A2Zadeh/CMU-MultimodalSDK).
+ - To retrieve the meta information and the raw data, please refer to the [SDK for these datasets](https://github.com/A2Zadeh/CMU-MultimodalSDK).
 
-### Prerequisites
-- Python 3.6/3.7
+
+## Prerequisites
+- Python 3.6
 - [Pytorch (>=1.0.0) and torchvision](https://pytorch.org/)
 - CUDA 10.0 or above
 
 
-
-
-
-### Run the Code
+## Run the Code
 
 1. Create (empty) folders for data and pre-trained models:
 ~~~~
@@ -56,7 +54,7 @@ python setup.py install
 export WARP_CTC_PATH=/home/xxx/warp-ctc/build
 ~~~~
 
-### Acknowledgement
+## Acknowledgement
 Some portion of the code were adapted from the [fairseq](https://github.com/pytorch/fairseq) repo.
 
 
