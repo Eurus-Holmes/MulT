@@ -36,6 +36,25 @@ python main.py [--FLAGS]
 
 Note that the defualt arguments are for unaligned version of MOSEI. For other datasets, please refer to Supplmentary.
 
+### Results
+
+```
+nohup python main.py &
+```
+
+ - unaligned version of MOSEI
+
+Output: [nohup.out](https://github.com/Eurus-Holmes/MulT/blob/master/nohup.out)
+
+```
+MAE:  0.6139981
+Correlation Coefficient:  0.6773945850196033
+mult_acc_7:  0.48873148744365746
+mult_acc_5:  0.5028976175144881
+F1 score:  0.8201431177436439
+Accuracy:  0.8200330214639515
+```
+
 ### If Using CTC
 
 Transformer requires no CTC module. However, as we describe in the paper, CTC module offers an alternative to applying other kinds of sequence models (e.g., recurrent architectures) to unaligned multimodal streams.
